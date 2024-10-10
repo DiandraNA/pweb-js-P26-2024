@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TokoP26</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>TokoP26</h1>
+        <div class="filter">
+            <label for="sort">Sort by:</label>
+            <select id="sort">
+                <option value="alphabetical">Alphabetical</option>
+                <option value="highest-price">Highest Price</option>
+                <option value="lowest-price">Lowest Price</option>
+            </select>
+
+            <label for="items-per-page">Items per page:</label>
+            <select id="items-per-page">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <div id="product-container" class="products"></div>
+    </main>
+
+    <footer>
+        <div id="cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+            <p>Total Items: <span id="total-items">0</span></p>
+            <p>Total Price: $<span id="total-price">0.00</span></p>
+            <button id="checkout">Checkout</button>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

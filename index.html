@@ -9,25 +9,32 @@
 <body>
     <header>
         <h1>TokoP26</h1>
-        <div class="filter">
-            <label for="sort">Sort by:</label>
-            <select id="sort">
-                <option value="alphabetical">Alphabetical</option>
-                <option value="highest-price">Highest Price</option>
-                <option value="lowest-price">Lowest Price</option>
-            </select>
+        <div class="filter-container">
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search products...">
+                <button id="search-button">Search</button>
+            </div>
+            <div class="filter">
+                <label for="sort">Sort by:</label>
+                <select id="sort">
+                    <option value="alphabetical">Alphabetical</option>
+                    <option value="highest-price">Highest Price</option>
+                    <option value="lowest-price">Lowest Price</option>
+                </select>
 
-            <label for="items-per-page">Items per page:</label>
-            <select id="items-per-page">
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-            </select>
+                <label for="items-per-page">Items per page:</label>
+                <select id="items-per-page">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </select>
+            </div>
         </div>
     </header>
 
     <main>
         <div id="product-container" class="products"></div>
+        <div id="pagination"></div>
     </main>
 
     <footer>

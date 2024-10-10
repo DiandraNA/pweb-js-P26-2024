@@ -108,8 +108,32 @@ document.getElementById('checkout').addEventListener('click', function() {
     updateCart();
 });
 
+function setupSearch() {
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+
+    searchButton.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+}
+
+function performSearch() {
+    const searchInput = document.getElementById('search-input');
+    const query = searchInput.value.toLowerCase();
+    const filteredProducts = products.filter(product => 
+        product.title.toLowerCase().includes(query) || 
+        product.description.toLowerCase().includes(query)
+    );
+    currentPage = 1; // Reset to first page when searching
+    displayProducts(filteredProducts);
+}
+
 // Initialize on page load
 window.onload = function() {
     fetchProducts();
     updateCart();
+    setupSearch();
 };

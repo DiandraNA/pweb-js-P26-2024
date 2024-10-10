@@ -81,7 +81,13 @@ function updateCart() {
     cart.forEach(item => {
         const cartItem = document.createElement('li');
         cartItem.innerHTML = `
-            ${item.title} (x${item.quantity}) - $${item.price * item.quantity}
+            ${item.title} 
+            <div class="quantity-controls">
+                <button onclick="decreaseQuantity(${item.id})">-</button>
+                <span>${item.quantity}</span>
+                <button onclick="increaseQuantity(${item.id})">+</button>
+            </div>
+            $${(item.price * item.quantity).toFixed(2)}
             <button onclick="removeFromCart(${item.id})">Remove</button>
         `;
         cartItems.appendChild(cartItem);
@@ -93,6 +99,28 @@ function updateCart() {
     totalItems.textContent = itemCount;
     totalPrice.textContent = priceTotal.toFixed(2);
     localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Increase quantity
+function increaseQuantity(productId) {
+    const item = cart.find(item => item.id === productId);
+    if (item) {
+        item.quantity += 1;
+        updateCart();
+    }
+}
+
+// Decrease quantity
+function decreaseQuantity(productId) {
+    const item = cart.find(item => item.id === productId);
+    if (item) {
+        item.quantity -= 1;
+        if (item.quantity === 0) {
+            removeFromCart(productId);
+        } else {
+            updateCart();
+        }
+    }
 }
 
 // Remove from cart

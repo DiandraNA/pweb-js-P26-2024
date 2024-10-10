@@ -8,7 +8,19 @@
 </head>
 <body>
     <header>
-        <h1>TokoP26</h1>
+        <div class="header-top">
+            <h1>TokoP26</h1>
+            <div id="user-actions">
+                <div id="login-container">
+                    <form id="login-form">
+                        <input type="text" id="username" placeholder="Username" required>
+                        <input type="password" id="password" placeholder="Password" required>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+                <button id="logout-button" style="display: none;">Logout</button>
+            </div>
+        </div>
         <div class="filter-container">
             <div id="search-container">
                 <input type="text" id="search-input" placeholder="Search products...">
@@ -21,7 +33,7 @@
                     <option value="highest-price">Highest Price</option>
                     <option value="lowest-price">Lowest Price</option>
                 </select>
-
+    
                 <label for="items-per-page">Items per page:</label>
                 <select id="items-per-page">
                     <option value="5">5</option>

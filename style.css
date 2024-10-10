@@ -13,15 +13,58 @@ body {
 }
 
 /* Header */
+/* Header */
 header {
-    padding: 20px;
     background-color: #007bff;
     color: white;
+    padding: 10px 20px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 h1 {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin: 0;
+}
+
+#user-actions {
+    display: flex;
+    align-items: center;
+}
+
+#login-container {
+    display: flex;
+}
+
+#login-form {
+    display: flex;
+    gap: 10px;
+}
+
+#login-form input {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+#login-form button,
+#logout-button {
+    padding: 5px 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#login-form button:hover,
+#logout-button:hover {
+    background-color: #003d82;
 }
 
 /* Filter container */
@@ -179,6 +222,26 @@ h1 {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #user-actions {
+        margin-top: 10px;
+    }
+
+    #login-form {
+        flex-direction: column;
+    }
+
+    #login-form input,
+    #login-form button,
+    #logout-button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
     .filter-container {
         flex-direction: column;
         align-items: stretch;

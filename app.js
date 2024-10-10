@@ -131,9 +131,66 @@ function performSearch() {
     displayProducts(filteredProducts);
 }
 
-// Initialize on page load
+// Add these functions to your app.js
+function setupLoginForm() {
+    const loginForm = document.getElementById('login-form');
+    const logoutButton = document.getElementById('logout-button');
+    loginForm.addEventListener('submit', handleLogin);
+    logoutButton.addEventListener('click', handleLogout);
+}
+
+async function handleLogin(e) {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        const response = await fetch('https://dummyjson.com/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password })
+        });
+        const data = await response.json();
+        if (response.ok) {
+            // Store the token and update UI
+            localStorage.setItem('token', data.token);
+            updateLoginState(true);
+            alert('Login successful!');
+        } else {
+            alert('Login failed: ' + data.message);
+        }
+    } catch (error) {
+        console.error('Login error', error);
+        alert('An error occurred during login');
+    }
+}
+
+function handleLogout() {
+    localStorage.removeItem('token');
+    updateLoginState(false);
+}
+
+function updateLoginState(isLoggedIn) {
+    const loginContainer = document.getElementById('login-container');
+    const logoutButton = document.getElementById('logout-button');
+    if (isLoggedIn) {
+        loginContainer.style.display = 'none';
+        logoutButton.style.display = 'block';
+    } else {
+        loginContainer.style.display = 'block';
+        logoutButton.style.display = 'none';
+    }
+}
+
+// Update your window.onload function
 window.onload = function() {
     fetchProducts();
     updateCart();
     setupSearch();
+    setupLoginForm();
+    
+    // Check if user is logged in
+    if (localStorage.getItem('token')) {
+        updateLoginState(true);
+    }
 };

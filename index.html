@@ -46,7 +46,16 @@
 
     <main>
         <div id="product-container" class="products"></div>
-        <div id="pagination"></div>
+        <div id="itemsPerPageControl">
+            <button onclick="changeItemsPerPage(5)">5 per page</button>
+            <button onclick="changeItemsPerPage(10)">10 per page</button>
+            <button onclick="changeItemsPerPage(15)">15 per page</button>
+            <button onclick="showAllItems()">All Items</button>
+        </div>
+        
+        <div id="pagination">
+            <!-- Pagination buttons will be added here dynamically -->
+        </div>
     </main>
 
     <footer>

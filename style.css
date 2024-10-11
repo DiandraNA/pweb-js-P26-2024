@@ -109,6 +109,18 @@ h1 {
     margin-left: 10px;
 }
 
+#itemsPerPageControl {
+    margin-bottom: 20px;
+}
+
+#pagination {
+    margin-top: 20px;
+}
+
+#pagination button {
+    margin-right: 5px;
+}
+
 /* Product container */
 .products {
     display: flex;

@@ -178,6 +178,10 @@
 
     // Checkout
     document.getElementById('checkout').addEventListener('click', function() {
+        if (!localStorage.getItem('token')) {
+            alert('You must be logged in to proceed to checkout.');
+            return;
+        }
         alert('Checkout successful!');
         cart = [];
         updateCart();

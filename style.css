@@ -7,53 +7,57 @@
 
 /* Body styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
     color: #333;
+    line-height: 1.6;
 }
 
 /* Header */
 header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: #fff;
+    padding: 15px 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 0;
-    margin-right: 20px;
 }
 
 #search-container {
     flex-grow: 1;
     display: flex;
     margin-right: 20px;
-    max-width: 300px;
+    max-width: 400px;
 }
 
 #search-input {
     flex-grow: 1;
-    padding: 5px;
+    padding: 10px;
     border: none;
-    border-radius: 3px 0 0 3px;
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
 }
 
 #search-button {
-    padding: 5px 10px;
-    background-color: #0056b3;
+    padding: 10px 15px;
+    background: #004a99;
     color: white;
     border: none;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 #search-button:hover {
-    background-color: #003d82;
+    background: #003366;
 }
 
 #login-container {
@@ -61,26 +65,25 @@ h1 {
     align-items: center;
 }
 
-
 #login-container input {
-    padding: 5px;
-    border: none;
-    border-radius: 3px;
-    margin-right: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
 }
 
-
 #login-button, #logout-button {
-    padding: 5px 10px;
-    background-color: #28a745;
+    padding: 10px 15px;
+    background: #28a745;
     color: white;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 #login-button:hover, #logout-button:hover {
-    background-color: #218838;
+    background: #218838;
 }
 
 #sort-container, #items-per-page-container {
@@ -90,46 +93,56 @@ h1 {
 }
 
 #sort-container label, #items-per-page-container label {
-    margin-right: 5px;
-    color: white;
+    margin-right: 10px;
+    color: #fff;
 }
 
 #sort, #items-per-page {
-    padding: 5px;
+    padding: 10px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 /* Product container */
 .products {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
+    gap: 30px;
+    padding: 40px;
     justify-content: center;
 }
 
 .product {
-    background-color: white;
-    padding: 15px;
+    background: white;
+    padding: 20px;
     border: 1px solid #ddd;
-    width: 200px;
+    width: 250px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 15px;
+    transition: box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .product img {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 .product button {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px;
-    margin-top: 10px;
+    padding: 10px 20px;
+    margin-top: 15px;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
 .product button:hover {
@@ -138,42 +151,46 @@ h1 {
 
 /* Cart */
 #cart {
-    padding: 20px;
+    padding: 30px;
     background-color: white;
     border-top: 1px solid #ddd;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #cart h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 #cart-items {
     list-style: none;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 #cart-items li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
 }
 
 .quantity-controls {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 
 .quantity-controls button {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 10px;
     cursor: pointer;
     font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
 .quantity-controls button:hover {
@@ -181,15 +198,18 @@ h1 {
 }
 
 .quantity-controls span {
-    padding: 0 5px;
+    padding: 0 10px;
+    font-size: 1.2rem;
 }
 
 #cart-items li button {
     background-color: #dc3545;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 10px;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
 #cart-items li button:hover {
@@ -200,10 +220,13 @@ h1 {
 #checkout {
     background-color: #28a745;
     color: white;
-    padding: 10px;
+    padding: 15px;
     border: none;
     cursor: pointer;
     width: 100%;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
 #checkout:hover {
@@ -214,16 +237,18 @@ h1 {
 #pagination {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #pagination button {
-    margin: 0 5px;
-    padding: 5px 10px;
+    margin: 0 10px;
+    padding: 10px 15px;
     background-color: #007bff;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
 #pagination button:hover {
@@ -243,17 +268,17 @@ h1 {
 
     #search-container {
         margin-right: 0;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     #login-container {
         position: static;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     #sort-container, #items-per-page-container {
         margin-left: 0;
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     .product {

@@ -17,70 +17,27 @@ header {
     background-color: #007bff;
     color: white;
     padding: 10px 20px;
-}
-
-.header-top {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
 }
 
 h1 {
     font-size: 2rem;
     margin: 0;
-}
-
-#user-actions {
-    display: flex;
-    align-items: center;
-}
-
-#login-container {
-    display: flex;
-}
-
-#login-form {
-    display: flex;
-    gap: 10px;
-}
-
-#login-form input {
-    padding: 5px;
-    border: none;
-    border-radius: 3px;
-}
-
-#login-form button,
-#logout-button {
-    padding: 5px 10px;
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-#login-form button:hover,
-#logout-button:hover {
-    background-color: #003d82;
-}
-
-/* Filter container */
-.filter-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-/* Search container */
-#search-container {
-    display: flex;
     margin-right: 20px;
 }
 
+#search-container {
+    flex-grow: 1;
+    display: flex;
+    margin-right: 20px;
+    max-width: 300px;
+}
+
 #search-input {
+    flex-grow: 1;
     padding: 5px;
     border: none;
     border-radius: 3px 0 0 3px;
@@ -99,26 +56,48 @@ h1 {
     background-color: #003d82;
 }
 
-/* Filter section */
-.filter {
+#login-container {
     display: flex;
     align-items: center;
 }
 
-.filter label, .filter select {
-    margin-left: 10px;
-}
 
-#itemsPerPageControl {
-    margin-bottom: 20px;
-}
-
-#pagination {
-    margin-top: 20px;
-}
-
-#pagination button {
+#login-container input {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
     margin-right: 5px;
+}
+
+
+#login-button, #logout-button {
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#login-button:hover, #logout-button:hover {
+    background-color: #218838;
+}
+
+#sort-container, #items-per-page-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+#sort-container label, #items-per-page-container label {
+    margin-right: 5px;
+    color: white;
+}
+
+#sort, #items-per-page {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
 }
 
 /* Product container */
@@ -257,27 +236,7 @@ h1 {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .header-top {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    #user-actions {
-        margin-top: 10px;
-    }
-
-    #login-form {
-        flex-direction: column;
-    }
-
-    #login-form input,
-    #login-form button,
-    #logout-button {
-        width: 100%;
-        margin-bottom: 5px;
-    }
-
-    .filter-container {
+    header {
         flex-direction: column;
         align-items: stretch;
     }
@@ -287,13 +246,17 @@ h1 {
         margin-bottom: 10px;
     }
 
-    .filter {
-        flex-wrap: wrap;
+    #login-container {
+        position: static;
+        margin-bottom: 10px;
     }
 
-    .filter label, .filter select {
+    #sort-container, #items-per-page-container {
         margin-left: 0;
-        margin-right: 10px;
-        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+
+    .product {
+        width: 100%;
     }
 }

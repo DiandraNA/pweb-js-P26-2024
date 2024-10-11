@@ -62,10 +62,11 @@
 
 
     // Change items per page
-    document.getElementById('items-per-page').addEventListener('change', function() {
-        const itemsPerPage = parseInt(this.value);
-        displayProducts(products.slice(0, itemsPerPage));
-    });
+    //document.getElementById('items-per-page').addEventListener('change', function() {
+    //   const itemsPerPage = parseInt(this.value);
+    //   displayProducts(products.slice(0, itemsPerPage));
+    // });
+    
 
     function setupPagination(totalItems, itemsPerPage) {
         const pageCount = Math.ceil(totalItems / itemsPerPage);
@@ -83,11 +84,16 @@
         }
     }
     
-    function changeItemsPerPage(number) {
-        itemsPerPage = number;
+    document.getElementById('items-per-page').addEventListener('change', function() {
+        const selectedValue = this.value;
+        if (selectedValue === 'all') {
+            itemsPerPage = products.length;
+        } else {
+            itemsPerPage = parseInt(selectedValue);
+        }
         currentPage = 1;
         displayProducts(products, currentPage, itemsPerPage);
-    }
+    });
     
     function showAllItems() {
         itemsPerPage = products.length;

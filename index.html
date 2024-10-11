@@ -33,31 +33,35 @@
                     <option value="highest-price">Highest Price</option>
                     <option value="lowest-price">Lowest Price</option>
                 </select>
-    
+                
+                <div id="items-per-page-container">
+                    <label for="items-per-page">Items per page:</label>
+                    <select id="items-per-page">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="all">All Items</option>
+                    </select>
+
+
                 <!--label for="items-per-page">Items per page:</label>
                 <select id="items-per-page">
-                    <option value="5">5</option>
+                    <option value="5">5</option> 
                     <option value="10">10</option>
-                    <option value="15">15</option>
-                </select>-->
+                    <option value="15">15</option>  (code lama)
+                </select>--> 
             </div>
         </div>
     </header>
 
     <main>
         <div id="product-container" class="products"></div>
-        <div id="itemsPerPageControl">
-            <button onclick="changeItemsPerPage(5)">5 per page</button>
-            <button onclick="changeItemsPerPage(10)">10 per page</button>
-            <button onclick="changeItemsPerPage(15)">15 per page</button>
-            <button onclick="showAllItems()">All Items</button>
-        </div>
         
         <div id="pagination">
             <!-- Pagination buttons will be added here dynamically -->
         </div>
     </main>
-
+    
     <footer>
         <div id="cart">
             <h2>Shopping Cart</h2>

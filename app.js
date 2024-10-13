@@ -61,13 +61,6 @@
     });
 
 
-    // Change items per page
-    //document.getElementById('items-per-page').addEventListener('change', function() {
-    //   const itemsPerPage = parseInt(this.value);
-    //   displayProducts(products.slice(0, itemsPerPage));
-    // });
-    
-
     function setupPagination(totalItems, itemsPerPage) {
         const pageCount = Math.ceil(totalItems / itemsPerPage);
         const paginationElement = document.getElementById('pagination');
